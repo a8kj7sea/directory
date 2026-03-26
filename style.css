@@ -1,0 +1,246 @@
+:root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --accent: #58a6ff;
+    --muted: #8b949e; 
+    --folder: #e3b341;
+    --success: #3fb950;
+    --featured: #fcc419;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.5;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.header-tools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 15px;
+    gap: 10px;
+}
+
+.path {
+    font-size: 1.1rem;
+    color: var(--text);
+}
+
+.path span {
+    color: var(--muted);
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+input, select { 
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border); 
+    padding: 6px 10px;
+    border-radius: 4px;
+    outline: none;
+    font-family: inherit;
+    font-size: 12px;
+}
+
+input:focus {
+    border-color: var(--accent);
+}
+
+.table-container {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+th {
+    text-align: left;
+    padding: 12px;
+    background: #21262d;
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+th:hover {
+    color: var(--accent);
+}
+
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    transition: 0.15s;
+}
+
+tr:hover td {
+    background: #1c2128;
+}
+
+.featured-row td {
+    background: rgba(252, 196, 25, 0.03);
+}
+
+.repo-name {
+    color: var(--accent);
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.featured-row .repo-name {
+    color: var(--featured) !important;
+}
+
+.folder-icon {
+    color: var(--folder);
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.folder-icon.star {
+    color: var(--featured);
+}
+
+.featured-badge {
+    font-size: 9px;
+    background: var(--featured);
+    color: #0d1117;
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin-left: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.tag {
+    font-size: 10px;
+    padding: 2px 6px;
+    background: #23863633;
+    border: 1px solid #2386364d;
+    border-radius: 10px;
+    color: var(--success);
+    margin-right: 4px;
+}
+
+.lang-dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+#details-panel {
+    position: fixed;
+    right: -450px;
+    top: 0;
+    width: 400px;
+    height: 100%;
+    background: var(--surface);
+    border-left: 1px solid var(--border);
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 25px;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+    z-index: 100;
+    overflow-y: auto;
+}
+
+#details-panel.open {
+    right: 0;
+}
+
+.close-btn {
+    cursor: pointer;
+    float: right;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+}
+
+.close-btn:hover {
+    background: var(--border);
+    color: white;
+}
+
+#det-name {
+    color: var(--accent);
+    margin-top: 20px;
+}
+
+#det-desc {
+    font-size: 13px;
+    color: var(--text);
+}
+
+#det-link {
+    display: inline-block;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 12px;
+    border: 1px solid var(--border);
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+#det-link:hover {
+    background: #21262d;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 20px 0;
+}
+
+.file-item {
+    padding: 6px 0;
+    color: var(--muted);
+    font-size: 12px;
+    border-bottom: 1px dashed #30363d;
+    display: flex;
+    align-items: center;
+}
+
+.file-item::before {
+    content: "📄";
+    margin-right: 10px;
+    opacity: 0.6;
+}
+
+.status-msg {
+    padding: 10px;
+    font-size: 12px;
+    color: var(--accent);
+}

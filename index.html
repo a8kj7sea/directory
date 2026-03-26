@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index of /a8kj7sea/projects</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="header-tools">
+        <div class="path">Index of <span>/a8kj7sea/</span>directory</div>
+        <div class="controls">
+            <div id="status" class="status-msg">Initializing...</div>
+            <input type="text" id="searchInput" placeholder="Search directory..." onkeyup="filterAndRender()">
+            <select id="sortControl" onchange="filterAndRender()">
+                <option value="pushed_at">Last Updated</option>
+                <option value="name">Name (A-Z)</option>
+                <option value="language">Language</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <table id="repoTable">
+            <thead>
+                <tr>
+                    <th onclick="setSort('name')">Name</th>
+                    <th>Description</th>
+                    <th onclick="setSort('language')">Language</th>
+                    <th>Tags</th>
+                    <th onclick="setSort('pushed_at')">Modified</th>
+                </tr>
+            </thead>
+            <tbody id="repoBody"></tbody>
+        </table>
+    </div>
+</div>
+
+<div id="details-panel">
+    <span class="close-btn" onclick="closeSidebar()">CLOSE [ESC]</span>
+    <h2 id="det-name"></h2>
+    <p id="det-desc"></p>
+    <a id="det-link" target="_blank">🔗 View on GitHub</a>
+    <hr>
+    <div id="file-list"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
