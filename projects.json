@@ -103,7 +103,8 @@
     { "path": "a8kj7sea/blogapiv1", "featured": false },
     { "path": "a8kj7sea/directory", "featured": true },
     { "path": "a8kj7sea/RepCord", "featured": false },
-    { "path": "a8kj7sea/AutoBackup", "featured": false }
+    { "path": "a8kj7sea/AutoBackup", "featured": false },
+    { "path": "a8kj7sea/DiscordWebhook", "featured": false }
     
   ]
 }
